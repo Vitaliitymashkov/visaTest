@@ -8,7 +8,7 @@ import java.util.Objects;
 import static java.util.Objects.isNull;
 
 public class Service {
-    public List<String> go(List<String> data, int newOrnaments) {
+    public List<String> processChristmasTrees(List<String> data, int newOrnamentsToAdd) {
 
         Map <Integer, Value> dataSet = new HashMap<>();
 
@@ -48,7 +48,7 @@ public class Service {
 
         return dataSet.entrySet().stream()
                 .filter(i -> i.getValue().getRemSpace() != null)
-                .filter(i -> i.getValue().getRemSpace() <= newOrnaments)
+                .filter(i -> i.getValue().getRemSpace() <= newOrnamentsToAdd)
                 .map(o -> o.getKey().toString()).sorted().toList();
     }
 
